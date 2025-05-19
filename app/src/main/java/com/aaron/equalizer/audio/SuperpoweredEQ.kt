@@ -2,15 +2,12 @@ package com.aaron.equalizer.audio
 
 object SuperpoweredEQ {
     init {
-        System.loadLibrary("equalizer") // Not SuperpoweredExample!
+        System.loadLibrary("equalizer")
     }
 
-    external fun applyEQ(
-        inputBuffer: ShortArray,
-        numSamples: Int,
-        lowGain: Float,
-        midGain: Float,
-        highGain: Float,
-        sampleRate: Int
-    )
+    @JvmStatic
+    external fun applyEQ(audioData: ShortArray, numSamples: Int, lowGain: Float, midGain: Float, highGain: Float)
+
+    @JvmStatic
+    external fun initializeLicense(key: String)
 }
